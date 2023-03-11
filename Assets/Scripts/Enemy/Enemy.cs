@@ -1,41 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private string limitPointTag = "LimitPointRoom1";
+    [SerializeField] private string _waypointsTag = "WaypointRoom1";
 
-    private List<Transform> _limitPoints;
-    private Vector2 _minPos = new(float.MaxValue, float.MaxValue);
-    private Vector2 _maxPos = new(float.MinValue, float.MinValue);
+    [SerializeField] private List<Transform> _waypoints;
+
+    private int _currentWaypointIndex = 0;
+
     
     void Start()
     {
-        _limitPoints = new List<Transform>();
-        // limitPoints = GameObject.FindGameObjectWithTag(limitPointTag).GetComponents<Transform>().ToList();
-        var pointObjs = GameObject.FindGameObjectsWithTag(limitPointTag);
-
-        foreach (var obj in pointObjs)
-        { 
-            _limitPoints.Add(obj.transform);
-        }
-        
-        foreach (var point in _limitPoints)
-        {
-            if (point.position.x < _minPos.x)
-                _minPos.x = point.position.x;
-            if (point.position.y < _minPos.y)
-                _minPos.y = point.position.y;
-            if (point.position.x > _maxPos.x)
-                _maxPos.x = point.position.x;
-            if (point.position.y > _maxPos.y)
-                _maxPos.y = point.position.y;
-        }
+        _waypoints = GameObject.FindGameObjectsWithTag(_waypointsTag).Select(x => x.transform).ToList();
+        _currentWaypointIndex = GetRandWaypointIndex();
     }
 
     void Update()
     {
-        
+        if (_waypoints.Count > 0)
+        {
+            Vector3 targetPosition = _waypoints[_currentWaypointIndex].position;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 1f * Time.deltaTime);
+            if (transform.position.x == targetPosition.x && transform.position.y == targetPosition.y)
+            {
+                _currentWaypointIndex = GetRandWaypointIndex();
+            }
+        }
+    }
+
+    int GetRandWaypointIndex()
+    {
+        int randIndex = Random.Range(0, _waypoints.Count);
+        if (randIndex == _currentWaypointIndex)
+        {
+            return GetRandWaypointIndex();
+        }
+        else
+        {
+            return randIndex;
+        }
     }
 }
