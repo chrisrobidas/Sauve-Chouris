@@ -11,11 +11,15 @@ public class Enemy : MonoBehaviour
 
     private int _currentWaypointIndex = 0;
 
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+
     
     void Start()
     {
+        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _waypoints = GameObject.FindGameObjectsWithTag(_waypointsTag).Select(x => x.transform).ToList();
         _currentWaypointIndex = GetRandWaypointIndex();
+        
     }
 
     void Update()
@@ -23,7 +27,7 @@ public class Enemy : MonoBehaviour
         if (_waypoints.Count > 0)
         {
             Vector3 targetPosition = _waypoints[_currentWaypointIndex].position;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 1f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 8f * Time.deltaTime);
             float TOLERANCE = 10e-6f;
             if (Math.Abs(transform.position.x - targetPosition.x) < TOLERANCE && Math.Abs(transform.position.y - targetPosition.y) < TOLERANCE)
             {
@@ -32,16 +36,27 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    bool ObjectDetected(Vector2 targetPosition) 
+    {
+        Vector2 direction = ((Vector2)transform.position - targetPosition).normalized;        
+        RaycastHit2D hit = Physics2D.CircleCast(targetPosition, _spriteRenderer.bounds.size.x / 2, direction);
+
+        return !(hit.collider == null || hit.collider.tag == "Enemy");
+    }
+
     int GetRandWaypointIndex()
     {
-        int randIndex = (new System.Random()).Next(0, _waypoints.Count);
-        if (randIndex == _currentWaypointIndex)
+        List<int> indexes = Enumerable.Range(0, _waypoints.Count).ToList();
+        indexes = indexes.OrderBy(_ => Guid.NewGuid()).ToList();
+
+        foreach (int index in indexes)
         {
-            return GetRandWaypointIndex();
+            if (index != _currentWaypointIndex && !ObjectDetected(_waypoints[index].position))
+            {
+                return index;
+            }
         }
-        else
-        {
-            return randIndex;
-        }
+
+        return _currentWaypointIndex;
     }
 }
