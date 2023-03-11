@@ -68,10 +68,7 @@ public class Enemy : EnemyManager
 
     public override bool CheckPlayerInArea() 
     {
-        if (Physics2D.OverlapCircle(transform.position, closeViewRange, detectionLayer.value))
-        {
-            return true;
-        }
+        if (Physics2D.OverlapCircle(transform.position, closeViewRange, detectionLayer.value)) return true;
 
         if (Physics2D.OverlapCircle(transform.position, farViewRange, detectionLayer.value))
         {

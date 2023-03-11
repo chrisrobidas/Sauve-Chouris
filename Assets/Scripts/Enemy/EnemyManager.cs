@@ -21,5 +21,6 @@ public abstract class EnemyManager : MonoBehaviour
 
         State = patrolState;
         patrolState.NextState = chaseState;
+        chaseState.NextState = patrolState;
     }
 }
