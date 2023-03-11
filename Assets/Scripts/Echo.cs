@@ -22,10 +22,10 @@ public class Echo : MonoBehaviour
 
     private void Start()
     {
-        _echoSprite = GetComponent<SpriteRenderer>();
-        _revealableObject = GetComponent<Revealable>();
-        _light2D = GetComponent<Light2D>();
-        _revealableLight = GetComponent<RevealableLight>();
+        _echoSprite = gameObject.AddComponent<SpriteRenderer>();
+        _revealableObject = gameObject.AddComponent<Revealable>();
+        _light2D = gameObject.AddComponent<Light2D>();
+        _revealableLight = gameObject.AddComponent<RevealableLight>();
     }
 
     public void SetValues(float speed, float expandDuration, float fadeInTime, float fadeOutTime, Sprite echoSprite)

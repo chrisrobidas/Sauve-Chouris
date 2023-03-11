@@ -34,7 +34,7 @@ public class RevealableLight : MonoBehaviour
 
     private IEnumerator FadeInThenOut()
     {
-        yield return FadeTo(0.5f, FadeInTime);
+        yield return FadeTo(1.0f, FadeInTime);
         yield return FadeTo(0.0f, FadeOutTime);
     }
 

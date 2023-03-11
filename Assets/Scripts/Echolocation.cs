@@ -10,7 +10,7 @@ public class Echolocation : MonoBehaviour
     [SerializeField]
     private float speed = 2f;
     [SerializeField]
-    private float duration = 2f;
+    private float expandDuration = 2f;
     [SerializeField]
     private float fadeInTime = 1f;
     [SerializeField]
@@ -26,10 +26,6 @@ public class Echolocation : MonoBehaviour
     private void Start()
     {
         echo = new GameObject();
-        echo.AddComponent<SpriteRenderer>();
-        echo.AddComponent<Revealable>();
-        echo.AddComponent<Light2D>();
-        echo.AddComponent<RevealableLight>();
         echoComponent = echo.AddComponent<Echo>();
         Instantiate(echo);
     }
@@ -39,7 +35,7 @@ public class Echolocation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !echoComponent.IsActive())
         {
             echo.transform.position = transform.position;
-            echoComponent.SetValues(speed, duration, fadeInTime, fadeOutTime, _echoSprite);
+            echoComponent.SetValues(speed, expandDuration, fadeInTime, fadeOutTime, _echoSprite);
             echoComponent.Activate();
         }
     }
