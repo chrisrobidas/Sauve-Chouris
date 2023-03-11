@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{72FE9C26-DA64-82FE-E901-2BB6C20A90A2}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="513390118" Name="Bat"/>
+				<Bus Id="1229948536" Name="Environment"/>
+				<Bus Id="1492361653" Name="Sounds"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{97CB66AF-D176-1420-DA42-05DBE35355D9}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="61409385" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambiance.wav</ShortName>
+					<CachePath>SFX/Ambiance_53547835.wem</CachePath>
+				</File>
+				<File Id="207264826" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_8.wav</ShortName>
+					<CachePath>SFX/Music_8_2734A63B.wem</CachePath>
+				</File>
+				<File Id="233785072" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_1.wav</ShortName>
+					<CachePath>SFX/Music_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="237494214" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_2.wav</ShortName>
+					<CachePath>SFX/Music_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="245510924" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_9.wav</ShortName>
+					<CachePath>SFX/Music_9_882DC431.wem</CachePath>
+				</File>
+				<File Id="270206300" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_7.wav</ShortName>
+					<CachePath>SFX/Music_7_9A3AF372.wem</CachePath>
+				</File>
+				<File Id="336377783" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wing_Flap.wav</ShortName>
+					<CachePath>SFX/Wing_Flap_548D1C58.wem</CachePath>
+				</File>
+				<File Id="387283675" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Echolocation\Echolocation_1.wav</ShortName>
+					<CachePath>SFX/Echolocation/Echolocation_1_F81036E8.wem</CachePath>
+				</File>
+				<File Id="394730772" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Human\Human_2.wav</ShortName>
+					<CachePath>SFX/Human/Human_2_ECEE4538.wem</CachePath>
+				</File>
+				<File Id="441154338" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sauve_Chouris.wav</ShortName>
+					<CachePath>SFX/Sauve_Chouris_0C81BF41.wem</CachePath>
+				</File>
+				<File Id="489020820" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Echolocation\Echolocation_4.wav</ShortName>
+					<CachePath>SFX/Echolocation/Echolocation_4_34A5043E.wem</CachePath>
+				</File>
+				<File Id="549904615" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_6.wav</ShortName>
+					<CachePath>SFX/Music_6_3383873D.wem</CachePath>
+				</File>
+				<File Id="581422653" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death\Death_2.wav</ShortName>
+					<CachePath>SFX/Death/Death_2_CC7135F9.wem</CachePath>
+				</File>
+				<File Id="588315772" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu_Start.wav</ShortName>
+					<CachePath>SFX/Menu_Start_19DD07FC.wem</CachePath>
+				</File>
+				<File Id="645606932" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death\Death_1.wav</ShortName>
+					<CachePath>SFX/Death/Death_1_5CB05AD8.wem</CachePath>
+				</File>
+				<File Id="736247464" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Human\Human_1.wav</ShortName>
+					<CachePath>SFX/Human/Human_1_E477DA3B.wem</CachePath>
+				</File>
+				<File Id="746837422" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Echolocation\Echolocation_2.wav</ShortName>
+					<CachePath>SFX/Echolocation/Echolocation_2_75F49C1F.wem</CachePath>
+				</File>
+				<File Id="772264329" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_0.wav</ShortName>
+					<CachePath>SFX/Music_0_10C4C929.wem</CachePath>
+				</File>
+				<File Id="854501569" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_5.wav</ShortName>
+					<CachePath>SFX/Music_5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="998732158" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_3.wav</ShortName>
+					<CachePath>SFX/Music_3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1025035380" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death\Death_3.wav</ShortName>
+					<CachePath>SFX/Death/Death_3_30EF5BA1.wem</CachePath>
+				</File>
+				<File Id="1028589711" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Music_4.wav</ShortName>
+					<CachePath>SFX/Music_4_28BC7635.wem</CachePath>
+				</File>
+				<File Id="1065744191" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Echolocation\Echolocation_3.wav</ShortName>
+					<CachePath>SFX/Echolocation/Echolocation_3_5A2655F7.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="208165142" Name="Compressor (Custom)" LibName="Wwise Compressor" LibId="7077891"/>
+					<Plugin Id="920645143" Name="Compressor (Custom)" LibName="Wwise Compressor" LibId="7077891"/>
+				</Custom>
+			</Plugins>
+			<Events>
+				<Event Id="779278001" Name="Death" DurationType="OneShot" DurationMin="4.0417714" DurationMax="5.4170856">
+					<MediaRefs>
+						<MediaRef Id="581422653"/>
+						<MediaRef Id="645606932"/>
+						<MediaRef Id="1025035380"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2413957888" Name="Echo_Human" DurationType="OneShot" DurationMin="3.1267848" DurationMax="3.1502178">
+					<MediaRefs>
+						<MediaRef Id="394730772"/>
+						<MediaRef Id="736247464"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2575907346" Name="Echo_Shoot" DurationType="OneShot" DurationMin="1.6464291" DurationMax="2.0696995">
+					<MediaRefs>
+						<MediaRef Id="387283675"/>
+						<MediaRef Id="489020820"/>
+						<MediaRef Id="746837422"/>
+						<MediaRef Id="1065744191"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2238459845" Name="Game_Loaded" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="61409385"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="733168346" Name="Game_Start" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="207264826"/>
+						<MediaRef Id="233785072"/>
+						<MediaRef Id="237494214"/>
+						<MediaRef Id="245510924"/>
+						<MediaRef Id="270206300"/>
+						<MediaRef Id="336377783"/>
+						<MediaRef Id="549904615"/>
+						<MediaRef Id="588315772"/>
+						<MediaRef Id="772264329"/>
+						<MediaRef Id="854501569"/>
+						<MediaRef Id="998732158"/>
+						<MediaRef Id="1028589711"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="208165142"/>
+							<PluginRef Id="920645143"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="3925763493" Name="Sauve_Chouris" DurationType="OneShot" DurationMin="5.85341" DurationMax="5.85341">
+					<MediaRefs>
+						<MediaRef Id="441154338"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{1A17EE65-1E5F-3CE1-50FB-0DE3AAE49B00}</FileHash>
+</SoundBanksInfo>
