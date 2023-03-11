@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     int GetRandWaypointIndex()
     {
-        int randIndex = UnityEngine.Random.Range(0, _waypoints.Count);
+        int randIndex = (new System.Random()).Next(0, _waypoints.Count);
         if (randIndex == _currentWaypointIndex)
         {
             return GetRandWaypointIndex();
