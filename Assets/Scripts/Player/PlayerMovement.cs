@@ -4,22 +4,24 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     private Rigidbody2D _rigidbody;
-    private Vector2 _movement;
+    private Vector2 _moveDirection;
     
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _movement = new Vector2();
+        _moveDirection = new Vector2();
     }
 
     void Update()
     {
-        _movement.x = Input.GetAxis("Horizontal");
-        _movement.y = Input.GetAxis("Vertical");
+        var moveX = Input.GetAxis("Horizontal");
+        var moveY = Input.GetAxis("Vertical");
+
+        _moveDirection = new Vector2(moveX, moveY).normalized;
     }
 
     void FixedUpdate()
     {
-        _rigidbody.MovePosition(_rigidbody.position + _movement * (speed * Time.fixedDeltaTime));
+        _rigidbody.MovePosition(_rigidbody.position + _moveDirection * (speed * Time.fixedDeltaTime));
     }
 }
