@@ -7652,8 +7652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bae0ecc7b67864fa7d8b5c95ac4aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInTime: 1
-  fadeOutTime: 1
+  FadeInTime: 1
+  FadeOutTime: 1
 --- !u!1 &740067534
 GameObject:
   m_ObjectHideFlags: 0
@@ -13832,7 +13832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxRange: 3
+  duration: 1.5
   echo: {fileID: 739306358}
 --- !u!212 &1326461622
 SpriteRenderer:

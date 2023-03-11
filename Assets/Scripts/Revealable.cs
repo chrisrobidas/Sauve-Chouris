@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class Revealable : MonoBehaviour
 {
-    [SerializeField]
-    private float fadeInTime = 1.0f;
-
-    [SerializeField]
-    private float fadeOutTime = 1.0f;
+    public float FadeInTime = 1.0f;
+    public float FadeOutTime = 1.0f;
 
     private Renderer _renderer;
     
@@ -26,8 +23,8 @@ public class Revealable : MonoBehaviour
 
     private IEnumerator FadeInThenOut()
     {
-        yield return FadeTo(1.0f, fadeInTime);
-        yield return FadeTo(0.0f, fadeOutTime);
+        yield return FadeTo(1.0f, FadeInTime);
+        yield return FadeTo(0.0f, FadeOutTime);
     }
 
     private IEnumerator FadeTo(float value, float time)

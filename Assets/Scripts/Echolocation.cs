@@ -9,7 +9,7 @@ public class Echolocation : MonoBehaviour
     private float speed = 2f;
 
     [SerializeField]
-    private float maxRange = 3f;
+    private float duration = 2f;
 
     [SerializeField]
     private GameObject echo;
@@ -18,6 +18,7 @@ public class Echolocation : MonoBehaviour
     private Revealable _echoRevealableScript;
 
     private float _range = 0f;
+    private float _elapsedTime = 0f;
     private bool _echoActive = false;
     private List<Collider2D> _collidersHit = new List<Collider2D> ();
 
@@ -25,14 +26,17 @@ public class Echolocation : MonoBehaviour
     {
         _echoSprite = echo.GetComponent<SpriteRenderer>();
         _echoRevealableScript = echo.GetComponent<Revealable>();
+        _echoRevealableScript.FadeInTime = duration / 2;
+        _echoRevealableScript.FadeOutTime = duration / 2;
     }
 
     private void Update()
     {
-        if (_range > maxRange)
+        if (_elapsedTime > duration)
         {
             _echoActive = false;
             _range = 0f;
+            _elapsedTime = 0f;
             _collidersHit.Clear();
         }
 
@@ -44,6 +48,7 @@ public class Echolocation : MonoBehaviour
 
         if (_echoActive)
         {
+            _elapsedTime += Time.deltaTime;
             _range += speed * Time.deltaTime;
             _echoSprite.transform.localScale = new Vector3(_range, _range);
             EchoLocalize(_range);
