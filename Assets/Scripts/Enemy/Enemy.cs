@@ -10,23 +10,14 @@ public class Enemy : EnemyManager
 
     [SerializeField] private List<Transform> waypoints;
 
-    [SerializeField] private float speed = 3f;
-
-    [SerializeField] private LayerMask _detectionLayer;
-    [SerializeField] private float _radiusRange = 2f;
-
-    private int _currentWaypointIndex = 0;
-
-    private SpriteRenderer _spriteRenderer;
-    
     [SerializeField] private LayerMask detectionLayer;
     [SerializeField] private float closeViewRange = 2f;
     [SerializeField] private float farViewRange = 5f;
     [Range(0f, 360f)] [SerializeField] private float farViewAngle = 40f;
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private float speed = 3f;
-
-    private List<Transform> _waypoints;
+    
+    private SpriteRenderer _spriteRenderer;
     private Vector3 _target;
     private int _currentWaypointIndex = 0;
     private Transform _playerTarget;
@@ -92,9 +83,9 @@ public class Enemy : EnemyManager
     
     void CheckWaypoints()
     {
-        if (_waypoints.Count <= 0) return;
+        if (waypoints.Count <= 0) return;
         
-        ChangeTarget(_waypoints[_currentWaypointIndex].position);
+        ChangeTarget(waypoints[_currentWaypointIndex].position);
         const float TOLERANCE = 10e-6f;
         if (Math.Abs(transform.position.x - _target.x) < TOLERANCE && Math.Abs(transform.position.y - _target.y) < TOLERANCE)
         {
