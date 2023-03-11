@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -24,7 +24,8 @@ public class Enemy : MonoBehaviour
         {
             Vector3 targetPosition = _waypoints[_currentWaypointIndex].position;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 1f * Time.deltaTime);
-            if (transform.position.x == targetPosition.x && transform.position.y == targetPosition.y)
+            float TOLERANCE = 10e-6f;
+            if (Math.Abs(transform.position.x - targetPosition.x) < TOLERANCE && Math.Abs(transform.position.y - targetPosition.y) < TOLERANCE)
             {
                 _currentWaypointIndex = GetRandWaypointIndex();
             }
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     int GetRandWaypointIndex()
     {
-        int randIndex = Random.Range(0, _waypoints.Count);
+        int randIndex = UnityEngine.Random.Range(0, _waypoints.Count);
         if (randIndex == _currentWaypointIndex)
         {
             return GetRandWaypointIndex();
