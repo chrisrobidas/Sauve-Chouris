@@ -20,14 +20,14 @@ public class Enemy : EnemyManager
     private SpriteRenderer _spriteRenderer;
     
     [SerializeField] private LayerMask detectionLayer;
-    [SerializeField] private float closeViewAngle = 2f;
-    [SerializeField] private float farViewAngle = 4f;
+    [SerializeField] private float closeViewRange = 2f;
+    [SerializeField] private float farViewRange = 5f;
+    [Range(0f, 360f)] [SerializeField] private float farViewAngle = 40f;
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private float speed = 3f;
 
     private Vector3 _target;
     private int _currentWaypointIndex = 0;
-    // private bool _isChasing = false;
     private Transform _playerTarget;
     
     public new void Start()
@@ -44,8 +44,7 @@ public class Enemy : EnemyManager
     void Update()
     {
         State.RunCurrentState();
-        var position = transform.position;
-        Debug.DrawRay(position, _target - position, Color.blue);
+        Debug.DrawRay(transform.position, _target - transform.position, Color.yellow);
     }
 
     private void FixedUpdate()
@@ -53,7 +52,35 @@ public class Enemy : EnemyManager
         transform.position = Vector3.MoveTowards(transform.position, _target, speed * Time.deltaTime);
     }
 
-    public override bool CheckPlayerInArea() => Physics2D.OverlapCircle(transform.position, closeViewAngle, detectionLayer.value);
+    private void ChangeTarget(Vector3 newTarget)
+    {
+        _target = newTarget;
+        LookAtTarget();
+    }
+
+    private void LookAtTarget()
+    {
+        Vector2 lookDirection = (_target - transform.position).normalized;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
+    }
+
+    public override bool CheckPlayerInArea() 
+    {
+        if (Physics2D.OverlapCircle(transform.position, closeViewRange, detectionLayer.value))
+        {
+            return true;
+        }
+
+        if (Physics2D.OverlapCircle(transform.position, farViewRange, detectionLayer.value))
+        {
+            Vector2 directionToTarget = (_playerTarget.position - transform.position).normalized;
+            return (Vector2.Angle(transform.up, directionToTarget) <= farViewAngle / 2);
+        }
+
+        return false;
+    }
 
     public override void Patrol()
     {
@@ -62,7 +89,7 @@ public class Enemy : EnemyManager
 
     public override void Chase()
     {
-        _target = _playerTarget.position;
+        ChangeTarget(_playerTarget.position);
         Debug.Log("Chasing");
     }
     
@@ -70,7 +97,7 @@ public class Enemy : EnemyManager
     {
         if (_waypoints.Count <= 0) return;
         
-        _target = _waypoints[_currentWaypointIndex].position;
+        ChangeTarget(_waypoints[_currentWaypointIndex].position);
         const float TOLERANCE = 10e-6f;
         if (Math.Abs(transform.position.x - _target.x) < TOLERANCE && Math.Abs(transform.position.y - _target.y) < TOLERANCE)
         {
@@ -104,8 +131,24 @@ public class Enemy : EnemyManager
     
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, closeViewAngle);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, closeViewRange);
+        
+        Gizmos.color = Color.white;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, farViewRange);
+
+        Vector3 angl1 = DirFromAngl(-transform.eulerAngles.z, -farViewAngle * farViewRange);
+        Vector3 angl2 = DirFromAngl(-transform.eulerAngles.z, farViewAngle * farViewRange);
+
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawLine(transform.position, transform.position + angl1 * farViewRange);
+        Gizmos.DrawLine(transform.position, transform.position + angl2 * farViewRange);
+    }
+
+    private Vector2 DirFromAngl(float eulerYm, float angleDegrees)
+    {
+        angleDegrees += eulerYm;
+        return new Vector2(Mathf.Sin(angleDegrees * Mathf.Deg2Rad), Mathf.Cos(angleDegrees * Mathf.Deg2Rad));
     }
     
     
