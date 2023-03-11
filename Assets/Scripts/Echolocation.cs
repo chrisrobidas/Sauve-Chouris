@@ -2,76 +2,48 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Rendering.Universal;
 
 public class Echolocation : MonoBehaviour
 {
     [SerializeField]
     private float speed = 2f;
-
     [SerializeField]
-    private float duration = 2f;
-
+    private float expandDuration = 2f;
     [SerializeField]
-    private GameObject echo;
+    private float fadeInTime = 1f;
+    [SerializeField]
+    private float fadeOutTime = 2f;
+    [SerializeField]
+    private float echoCooldownTime = 6f;
+    [SerializeField]
+    private Sprite echoSprite;
 
-    private SpriteRenderer _echoSprite;
-    private Revealable _echoRevealableScript;
-
-    private float _range = 0f;
-    private float _elapsedTime = 0f;
-    private bool _echoActive = false;
-    private List<Collider2D> _collidersHit = new List<Collider2D> ();
+    private float _echoRemainingCooldownTime = 0f;
+    private GameObject _echo;
+    private Echo _echoComponent;
 
     private void Start()
     {
-        _echoSprite = echo.GetComponent<SpriteRenderer>();
-        _echoRevealableScript = echo.GetComponent<Revealable>();
-        _echoRevealableScript.FadeInTime = duration / 2;
-        _echoRevealableScript.FadeOutTime = duration / 2;
+        _echo = new GameObject();
+        _echoComponent = _echo.AddComponent<Echo>();
+        Instantiate(_echo);
     }
 
     private void Update()
     {
-        if (_elapsedTime > duration)
+        if (Input.GetKeyDown(KeyCode.Space) && !_echoComponent.IsActive() && _echoRemainingCooldownTime <= 0f)
         {
-            _echoActive = false;
-            _range = 0f;
-            _elapsedTime = 0f;
-            _collidersHit.Clear();
+            _echoRemainingCooldownTime = echoCooldownTime;
+            _echo.transform.position = transform.position;
+            _echoComponent.SetValues(speed, expandDuration, fadeInTime, fadeOutTime, echoSprite);
+            _echoComponent.Activate();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !_echoActive)
+        if (_echoRemainingCooldownTime > 0f)
         {
-            _echoActive = true;
-            _echoRevealableScript.Reveal();
-        }
-
-        if (_echoActive)
-        {
-            _elapsedTime += Time.deltaTime;
-            _range += speed * Time.deltaTime;
-            _echoSprite.transform.localScale = new Vector3(_range, _range);
-            EchoLocalize(_range);
-        }
-    }
-
-    public void EchoLocalize(float radius)
-    {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, radius * 2f, new Vector2(0, 0));
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (!_collidersHit.Contains(hit.collider))
-            {
-                _collidersHit.Add(hit.collider);
-                Debug.Log("Hit object at x: " + hit.transform.position.x + ", y: " + hit.transform.position.y);
-
-                // Reveal Revealable objects
-                Revealable revealableScript = hit.transform.GetComponent<Revealable>();
-                if (revealableScript != null)
-                {
-                    revealableScript.Reveal();
-                }
-            }
-        }
+            _echoRemainingCooldownTime -= Time.deltaTime;
+        } 
     }
 }
