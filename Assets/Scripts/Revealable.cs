@@ -16,6 +16,12 @@ public class Revealable : MonoBehaviour
         _renderer.material.color = invisible;
     }
 
+    public void SetDuration(float duration)
+    {
+        FadeInTime = duration / 2f;
+        FadeOutTime = duration / 2f;
+    }
+
     public void Reveal()
     {
         StartCoroutine(FadeInThenOut());
