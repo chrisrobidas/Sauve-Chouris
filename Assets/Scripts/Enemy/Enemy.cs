@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float speed = 3f;
 
+    [SerializeField] private LayerMask _detectionLayer;
+    [SerializeField] private float _radiusRange = 2f;
+
     private int _currentWaypointIndex = 0;
 
     private SpriteRenderer _spriteRenderer;
@@ -60,4 +63,6 @@ public class Enemy : MonoBehaviour
 
         return _currentWaypointIndex;
     }
+    
+    
 }
