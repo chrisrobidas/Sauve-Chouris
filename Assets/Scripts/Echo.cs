@@ -1,16 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class Echo : MonoBehaviour
 {
-    private bool isActive = false;
-    private bool isExpanding = false;
-    private float speed = 2f;
-    private float expandDuration = 2f;
-    private float fadeInTime = 1f;
-    private float fadeOutTime = 2f;
+    private bool _isActive = false;
+    private bool _isExpanding = false;
+    private float _speed = 2f;
+    private float _expandDuration = 2f;
+    private float _fadeInTime = 1f;
+    private float _fadeOutTime = 2f;
     private SpriteRenderer _echoSprite;
     private Revealable _revealableObject;
     private Light2D _light2D;
@@ -30,10 +29,10 @@ public class Echo : MonoBehaviour
 
     public void SetValues(float speed, float expandDuration, float fadeInTime, float fadeOutTime, Sprite echoSprite)
     {
-        this.speed = speed;
-        this.expandDuration = expandDuration;
-        this.fadeInTime = fadeInTime;
-        this.fadeOutTime = fadeOutTime;
+        _speed = speed;
+        _expandDuration = expandDuration;
+        _fadeInTime = fadeInTime;
+        _fadeOutTime = fadeOutTime;
         _echoSprite.sprite = echoSprite;
         _revealableObject.SetFadeInFadeOut(fadeInTime, fadeOutTime);
         _revealableLight.SetFadeInFadeOut(fadeInTime, fadeOutTime);
@@ -41,15 +40,15 @@ public class Echo : MonoBehaviour
 
     public bool IsActive()
     {
-        return isActive;
+        return _isActive;
     }
 
     public void Activate()
     {
-        if (!isActive)
+        if (!_isActive)
         {
-            isActive = true;
-            isExpanding = true;
+            _isActive = true;
+            _isExpanding = true;
             _revealableObject.Reveal();
             _revealableLight.Reveal();
         }
@@ -58,28 +57,28 @@ public class Echo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float canActivateTime = expandDuration > fadeInTime + fadeOutTime ? expandDuration : fadeInTime + fadeOutTime;
-        if (_elapsedTime > expandDuration)
+        float canActivateTime = _expandDuration > _fadeInTime + _fadeOutTime ? _expandDuration : _fadeInTime + _fadeOutTime;
+        if (_elapsedTime > _expandDuration)
         {
-            isExpanding = false;
+            _isExpanding = false;
         }
 
         if (_elapsedTime > canActivateTime)
         {
-            isActive = false;
+            _isActive = false;
             _elapsedTime = 0f;
             _range = 0f;
             _collidersHit.Clear();
         }
 
-        if (isExpanding)
+        if (_isExpanding)
         {
-            _range += speed * Time.deltaTime;
+            _range += _speed * Time.deltaTime;
             _echoSprite.transform.localScale = new Vector3(_range, _range);
             EchoLocalize(_range);
         }
 
-        if (isActive)
+        if (_isActive)
         {
             _elapsedTime += Time.deltaTime;
             _light2D.pointLightOuterRadius = _range * 2.5f;

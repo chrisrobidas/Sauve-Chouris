@@ -18,32 +18,32 @@ public class Echolocation : MonoBehaviour
     [SerializeField]
     private float echoCooldownTime = 6f;
     [SerializeField]
-    private Sprite _echoSprite;
+    private Sprite echoSprite;
 
-    float echoRemainingCooldownTime = 0f;
-    GameObject echo;
-    Echo echoComponent;
+    private float _echoRemainingCooldownTime = 0f;
+    private GameObject _echo;
+    private Echo _echoComponent;
 
     private void Start()
     {
-        echo = new GameObject();
-        echoComponent = echo.AddComponent<Echo>();
-        Instantiate(echo);
+        _echo = new GameObject();
+        _echoComponent = _echo.AddComponent<Echo>();
+        Instantiate(_echo);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !echoComponent.IsActive() && echoRemainingCooldownTime <= 0f)
+        if (Input.GetKeyDown(KeyCode.Space) && !_echoComponent.IsActive() && _echoRemainingCooldownTime <= 0f)
         {
-            echoRemainingCooldownTime = echoCooldownTime;
-            echo.transform.position = transform.position;
-            echoComponent.SetValues(speed, expandDuration, fadeInTime, fadeOutTime, _echoSprite);
-            echoComponent.Activate();
+            _echoRemainingCooldownTime = echoCooldownTime;
+            _echo.transform.position = transform.position;
+            _echoComponent.SetValues(speed, expandDuration, fadeInTime, fadeOutTime, echoSprite);
+            _echoComponent.Activate();
         }
 
-        if (echoRemainingCooldownTime > 0f)
+        if (_echoRemainingCooldownTime > 0f)
         {
-            echoRemainingCooldownTime -= Time.deltaTime;
+            _echoRemainingCooldownTime -= Time.deltaTime;
         } 
     }
 }
