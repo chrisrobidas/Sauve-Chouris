@@ -13732,7 +13732,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  duration: 1.5
+  expandDuration: 2
+  fadeInTime: 1
+  fadeOutTime: 2
+  echoCooldownTime: 8
   _echoSprite: {fileID: 21300000, guid: 89bcdabfe5e3c614f924a874e959bee1, type: 3}
 --- !u!212 &1326461622
 SpriteRenderer:

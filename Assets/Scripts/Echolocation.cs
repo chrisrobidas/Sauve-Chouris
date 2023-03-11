@@ -16,12 +16,13 @@ public class Echolocation : MonoBehaviour
     [SerializeField]
     private float fadeOutTime = 2f;
     [SerializeField]
+    private float echoCooldownTime = 6f;
+    [SerializeField]
     private Sprite _echoSprite;
 
+    float echoRemainingCooldownTime = 0f;
     GameObject echo;
     Echo echoComponent;
-    [SerializeField]
-    private GameObject spotlight2D;
 
     private void Start()
     {
@@ -32,11 +33,17 @@ public class Echolocation : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !echoComponent.IsActive())
+        if (Input.GetKeyDown(KeyCode.Space) && !echoComponent.IsActive() && echoRemainingCooldownTime <= 0f)
         {
+            echoRemainingCooldownTime = echoCooldownTime;
             echo.transform.position = transform.position;
             echoComponent.SetValues(speed, expandDuration, fadeInTime, fadeOutTime, _echoSprite);
             echoComponent.Activate();
         }
+
+        if (echoRemainingCooldownTime > 0f)
+        {
+            echoRemainingCooldownTime -= Time.deltaTime;
+        } 
     }
 }
