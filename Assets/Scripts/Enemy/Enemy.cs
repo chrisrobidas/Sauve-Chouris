@@ -26,6 +26,7 @@ public class Enemy : EnemyManager
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private float speed = 3f;
 
+    private List<Transform> _waypoints;
     private Vector3 _target;
     private int _currentWaypointIndex = 0;
     private Transform _playerTarget;
@@ -87,7 +88,6 @@ public class Enemy : EnemyManager
     public override void Chase()
     {
         ChangeTarget(_playerTarget.position);
-        Debug.Log("Chasing");
     }
     
     void CheckWaypoints()

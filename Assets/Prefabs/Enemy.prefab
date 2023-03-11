@@ -103,6 +103,6 @@ MonoBehaviour:
     m_Bits: 8
   closeViewRange: 1
   farViewRange: 4
-  farViewAngle: 101
+  farViewAngle: 105
   playerTag: Player
   speed: 3
