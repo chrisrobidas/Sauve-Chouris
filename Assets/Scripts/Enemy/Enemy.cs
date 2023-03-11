@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour
 
     private int _currentWaypointIndex = 0;
 
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
+
+    private float _speed = 3f;
 
     
     void Start()
@@ -27,7 +29,7 @@ public class Enemy : MonoBehaviour
         if (_waypoints.Count > 0)
         {
             Vector3 targetPosition = _waypoints[_currentWaypointIndex].position;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, 8f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
             float TOLERANCE = 10e-6f;
             if (Math.Abs(transform.position.x - targetPosition.x) < TOLERANCE && Math.Abs(transform.position.y - targetPosition.y) < TOLERANCE)
             {
