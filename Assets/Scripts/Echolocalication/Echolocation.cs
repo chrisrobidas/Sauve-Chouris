@@ -19,10 +19,12 @@ public class Echolocation : MonoBehaviour
     private GameObject _echo;
     private Echo _echoComponent;
     private SoundManager _soundManagerScript;
+    private CooldownSlider _cooldownSliderScript;
 
     private void Start()
     {
         _soundManagerScript = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        _cooldownSliderScript = GameObject.Find("CooldownSlider").GetComponent<CooldownSlider>();
 
         _echo = new GameObject();
         _echoComponent = _echo.AddComponent<Echo>();
@@ -33,6 +35,7 @@ public class Echolocation : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !_echoComponent.IsActive() && EchoRemainingCooldownTime <= 0f)
         {
+            _cooldownSliderScript.StopFadeOut();
             _soundManagerScript.PlaySound("Echo_Shoot");
             EchoRemainingCooldownTime = EchoCooldownTime;
             _echo.transform.position = transform.position;
