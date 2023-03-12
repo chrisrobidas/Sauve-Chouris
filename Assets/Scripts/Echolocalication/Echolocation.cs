@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
-using UnityEngine.Rendering.Universal;
 
 public class Echolocation : MonoBehaviour
 {
@@ -23,9 +18,12 @@ public class Echolocation : MonoBehaviour
 
     private GameObject _echo;
     private Echo _echoComponent;
+    private SoundManager _soundManagerScript;
 
     private void Start()
     {
+        _soundManagerScript = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+
         _echo = new GameObject();
         _echoComponent = _echo.AddComponent<Echo>();
         Instantiate(_echo);
@@ -35,6 +33,7 @@ public class Echolocation : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !_echoComponent.IsActive() && EchoRemainingCooldownTime <= 0f)
         {
+            _soundManagerScript.PlaySound("Echo_Shoot");
             EchoRemainingCooldownTime = EchoCooldownTime;
             _echo.transform.position = transform.position;
             _echoComponent.SetValues(speed, expandDuration, fadeInTime, fadeOutTime, echoSprite);
