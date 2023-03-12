@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,12 +8,7 @@ public class PauseMenu : MonoBehaviour
 
     public bool _isPaused;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -23,39 +16,29 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void TogglePauseMenu()
+    public void TogglePauseMenu()
     {
         _isPaused = !_isPaused;
+        pausePanel.SetActive(_isPaused);
 
         if (_isPaused)
         {
-            Resume();
+            Time.timeScale = 0f;
         }
         else
         {
-            Pause();
+            Time.timeScale = 1f;
         }
-    }
-
-    private void Pause()
-    {
-        pausePanel.SetActive(true);
-        Time.timeScale = 0f;
-    }
-
-    public void Resume()
-    {
-        pausePanel.SetActive(false);
-        Time.timeScale = 1f;
     }
 
     public void ReturnToMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void Exit()
     {
-
+        Application.Quit();
     }
 }
