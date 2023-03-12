@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f42e904cfeae7004eb842d218a9ebb92
+guid: 713d0331c0aafd84b95fc4c9078b2a99
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,43 +105,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: a_laide_0
+      name: ennemi_chat_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 54
-        width: 440
-        height: 399
+        x: 139
+        y: 394
+        width: 221
+        height: 244
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcedf7016dcd0bd46814416899cd1469
-      internalID: 259295730
+      spriteID: eebafbe01a1a10245929ea54c3897831
+      internalID: -50521094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: a_laide_1
+      name: ennemi_chat_1
       rect:
         serializedVersion: 2
-        x: 683
-        y: 58
-        width: 440
-        height: 400
+        x: 416
+        y: 397
+        width: 301
+        height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39aeb4336071aac48ba8ff4567c51bd5
-      internalID: -1021426505
+      spriteID: b8aee51acddc0e043b747da1df0a5b47
+      internalID: -1154355767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ennemi_chat_2
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 401
+        width: 120
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c5210fe4fd9504091d6af8352ba49c
+      internalID: -1389710622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ennemi_chat_3
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 384
+        width: 174
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c34cd970f2648948a1376dc91029294
+      internalID: -755530140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ennemi_chat_4
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 98
+        width: 278
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36369e57d1488664890d97b7b465cea8
+      internalID: 851806857
       vertices: []
       indices: 
       edges: []
@@ -157,8 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      a_laide_0: 259295730
-      a_laide_1: -1021426505
+      ennemi_chat_0: -50521094
+      ennemi_chat_1: -1154355767
+      ennemi_chat_2: -1389710622
+      ennemi_chat_3: -755530140
+      ennemi_chat_4: 851806857
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
