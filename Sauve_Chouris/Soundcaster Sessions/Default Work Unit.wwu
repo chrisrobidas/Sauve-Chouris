@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9B1BAE52-1870-43C9-9C06-0A81C2F60EDC}" SchemaVersion="110">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{9B1BAE52-1870-43C9-9C06-0A81C2F60EDC}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Music + SFX" ID="{F8C055B2-1EF5-48C4-89DD-8361511A9C04}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Game_Loaded" ID="{A5E230D7-9F0E-4487-8F4D-BEF22856BE54}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Game_Start" ID="{7364D20F-5735-4DC6-AB17-B01D2FD33EC1}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Echo_Shoot" ID="{1282F97E-A8EC-4C27-B0CD-55FB7A910AC0}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Echo_Human" ID="{A5163959-9D4C-4F37-A089-134B474A631F}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Sauve_Chouris" ID="{D06F0ED7-8E0B-4119-A1C7-DFEC844AF08C}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Death" ID="{D8F5DADF-CD26-4988-9798-E5DC6D4BC556}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

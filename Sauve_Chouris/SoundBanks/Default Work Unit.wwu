@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CF90E1EC-D758-44EF-9348-8D45FFF727B3}" SchemaVersion="110">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{CF90E1EC-D758-44EF-9348-8D45FFF727B3}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{E7EC6BF6-0B0A-481B-A1D6-7865FC118CA1}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Sauve_Chouris" ID="{D06F0ED7-8E0B-4119-A1C7-DFEC844AF08C}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Game_Loaded" ID="{A5E230D7-9F0E-4487-8F4D-BEF22856BE54}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Death" ID="{D8F5DADF-CD26-4988-9798-E5DC6D4BC556}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Echo_Shoot" ID="{1282F97E-A8EC-4C27-B0CD-55FB7A910AC0}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Game_Start" ID="{7364D20F-5735-4DC6-AB17-B01D2FD33EC1}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Echo_Human" ID="{A5163959-9D4C-4F37-A089-134B474A631F}" WorkUnitID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

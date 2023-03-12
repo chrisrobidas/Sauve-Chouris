@@ -1,0 +1,37 @@
+Event	ID	Name			Wwise Object Path	Notes
+	733168346	Game_Start			\Default Work Unit\Game_Start	
+	779278001	Death			\Default Work Unit\Death	
+	2238459845	Game_Loaded			\Default Work Unit\Game_Loaded	
+	2413957888	Echo_Human			\Default Work Unit\Echo_Human	
+	2575907346	Echo_Shoot			\Default Work Unit\Echo_Shoot	
+	3925763493	Sauve_Chouris			\Default Work Unit\Sauve_Chouris	
+
+Effect plug-ins	ID	Name	Type				Notes
+	208165142	Compressor (Custom)	Wwise Compressor			
+	920645143	Compressor (Custom)	Wwise Compressor			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	61409385	Ambiance	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Ambiance_53547835.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiance		17280272
+	207264826	Music_8	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_8_2734A63B.wem		\Actor-Mixer Hierarchy\Music\Level\Music_8		3840208
+	233785072	Music_1	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_1_10C4C929.wem		\Actor-Mixer Hierarchy\Music\Level\Music_1		3072208
+	237494214	Music_2	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_2_10C4C929.wem		\Actor-Mixer Hierarchy\Music\Level\Music_2		3456208
+	245510924	Music_9	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_9_882DC431.wem		\Actor-Mixer Hierarchy\Music\Level\Music_9		4992208
+	270206300	Music_7	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_7_9A3AF372.wem		\Actor-Mixer Hierarchy\Music\Level\Music_7		4708952
+	336377783	Wing_Flap	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Wing_Flap_548D1C58.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Wing_Flap		7296272
+	387283675	Echolocation_1	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Echolocation\Echolocation_1_F81036E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Echolocation\Echolocation_1		397476
+	394730772	Human_2	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Human\Human_2_ECEE4538.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Human\Human_2		604936
+	441154338	Sauve_Chouris	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Sauve_Chouris_0C81BF41.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Sauve_Chouris		1123952
+	489020820	Echolocation_4	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Echolocation\Echolocation_4_34A5043E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Echolocation\Echolocation_4		316208
+	549904615	Music_6	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_6_3383873D.wem		\Actor-Mixer Hierarchy\Music\Level\Music_6		3338388
+	581422653	Death_2	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Death\Death_2_CC7135F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Death\Death_2		776116
+	588315772	Menu_Start	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Menu_Start_19DD07FC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu_Start		552848
+	645606932	Death_1	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Death\Death_1_5CB05AD8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Death\Death_1		855172
+	736247464	Human_1	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Human\Human_1_E477DA3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Human\Human_1		600436
+	746837422	Echolocation_2	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Echolocation\Echolocation_2_75F49C1F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Echolocation\Echolocation_2		345644
+	772264329	Music_0	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_0_10C4C929.wem		\Actor-Mixer Hierarchy\Music\Level\Music_0		8448240
+	854501569	Music_5	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_5_10C4C929.wem		\Actor-Mixer Hierarchy\Music\Level\Music_5		2496208
+	998732158	Music_3	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_3_10C4C929.wem		\Actor-Mixer Hierarchy\Music\Level\Music_3		3072208
+	1025035380	Death_3	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Death\Death_3_30EF5BA1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Death\Death_3		1040240
+	1028589711	Music_4	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Music_4_28BC7635.wem		\Actor-Mixer Hierarchy\Music\Level\Music_4		6355876
+	1065744191	Echolocation_3	Y:\Desktop\Game Jam 2023\Sauve_Chouris\.cache\Windows\SFX\Echolocation\Echolocation_3_5A2655F7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bat POV\Echolocation\Echolocation_3		354476
+
