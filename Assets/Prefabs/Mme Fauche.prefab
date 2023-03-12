@@ -50,8 +50,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   closeViewRange: 10
-  farViewRange: 25
-  farViewAngle: 117
+  farViewRange: 30
+  farViewAngle: 118.11
   playerTag: Player
   speed: 4
 --- !u!1 &5240959363832180153

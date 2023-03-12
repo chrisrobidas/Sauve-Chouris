@@ -49,8 +49,8 @@ MonoBehaviour:
   detectionLayer:
     serializedVersion: 2
     m_Bits: 8
-  closeViewRange: 15
-  farViewRange: 15
+  closeViewRange: 20
+  farViewRange: 20
   farViewAngle: 145.12
   playerTag: Player
   speed: 6
