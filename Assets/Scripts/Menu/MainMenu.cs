@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
     private GameObject levelSelectionCanvas;
 
     [SerializeField]
+    private GameObject loadingCanvas;
+
+    [SerializeField]
     private GameObject buttonsCanvas;
 
     [SerializeField]
@@ -32,6 +35,11 @@ public class MainMenu : MonoBehaviour
     private int selectedLevel;
 
     private Coroutine _cutsceneCoroutine;
+
+    private void Start()
+    {
+        loadingCanvas.SetActive(false);
+    }
 
     private void Update()
     {
@@ -109,6 +117,13 @@ public class MainMenu : MonoBehaviour
 
     public void StartLevel()
     {
+        StartCoroutine(LoadLevel());
+    }
+
+    private IEnumerator LoadLevel()
+    {
+        loadingCanvas.SetActive(true);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Level_" + selectedLevel);
     }
 }

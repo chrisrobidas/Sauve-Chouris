@@ -19,12 +19,16 @@ public class Echo : MonoBehaviour
     private float _elapsedTime = 0f;
     private List<Collider2D> _collidersHit = new List<Collider2D>();
 
+    private SoundManager _soundManagerScript;
+
     private void Start()
     {
         _echoSprite = gameObject.AddComponent<SpriteRenderer>();
         _revealableObject = gameObject.AddComponent<Revealable>();
         _light2D = gameObject.AddComponent<Light2D>();
         _revealableLight = gameObject.AddComponent<RevealableLight>();
+
+        _soundManagerScript = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     public void SetValues(float speed, float expandDuration, float fadeInTime, float fadeOutTime, Sprite echoSprite)
@@ -99,6 +103,12 @@ public class Echo : MonoBehaviour
                 if (revealableScript != null)
                 {
                     revealableScript.Reveal();
+
+                    //Play spooky sound for grandma and chaaaarrrles
+                    if (hit.collider.gameObject.name == "Enemy")
+                    {
+                        _soundManagerScript.PlaySound("Echo_Human");
+                    }
                 }
             }
         }
