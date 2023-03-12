@@ -14,6 +14,7 @@ public class CooldownSlider : MonoBehaviour
     private Image sliderBackground;
 
     private Slider _slider;
+    private Coroutine _fadeOutCoroutine;
 
     private void Start()
     {
@@ -26,14 +27,19 @@ public class CooldownSlider : MonoBehaviour
     {
         _slider.value = (playerEchoLocation.EchoCooldownTime - playerEchoLocation.EchoRemainingCooldownTime) / playerEchoLocation.EchoCooldownTime;
 
-        if (_slider.value <= 0.01 && sliderFill.color.a <= 0.01)
-        {
-            StartCoroutine(ImageFadeTo(1, 1));
-        }
-
         if (_slider.value >= 0.99 && sliderFill.color.a >= 0.99)
         {
-            StartCoroutine(ImageFadeTo(0, 1));
+            _fadeOutCoroutine = StartCoroutine(ImageFadeTo(0, 1));
+        }
+
+        if (_slider.value <= 0.01 && sliderFill.color.a <= 0.01)
+        {
+            if (_fadeOutCoroutine != null)
+            {
+                StopCoroutine(_fadeOutCoroutine);
+            }
+
+            StartCoroutine(ImageFadeTo(1, 1));
         }
     }
 
