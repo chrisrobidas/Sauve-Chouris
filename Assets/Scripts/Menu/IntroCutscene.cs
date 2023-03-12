@@ -1,10 +1,9 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class IntroCutscene : MonoBehaviour
+public class IntroCutscene : CutScene
 {
     [SerializeField]
     Image intro1Image;
@@ -91,16 +90,5 @@ public class IntroCutscene : MonoBehaviour
         intro4Text.enabled = false;
         yield return ImageFadeTo(0.0f, 1, intro4Image);
         intro4Image.enabled = false;
-    }
-
-    private IEnumerator ImageFadeTo(float value, float time, Image imageToModify)
-    {
-        float alpha = imageToModify.color.a;
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / time)
-        {
-            Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, value, t));
-            imageToModify.color = newColor;
-            yield return null;
-        }
     }
 }
