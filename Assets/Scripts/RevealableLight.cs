@@ -44,7 +44,6 @@ public class RevealableLight : MonoBehaviour
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / time)
         {
             _spotlight2D.intensity = Mathf.Lerp(initialIntensity, value, t);
-            Debug.Log(_spotlight2D.intensity);
             yield return null;
         }
     }
