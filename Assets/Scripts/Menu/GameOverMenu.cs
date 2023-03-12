@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    // private GameManager _gameManager;
     [SerializeField] private GameObject gameOverPanel;
     private bool _isActive;
 
@@ -11,16 +10,7 @@ public class GameOverMenu : MonoBehaviour
 
     private void Start()
     {
-        // _gameManager = FindObjectOfType<GameManager>();
         _isActive = false;
-    }
-
-    private void Update()
-    {
-        // if (_gameManager.GameIsEnded)
-        // {
-        //     
-        // }
     }
 
     public void Restart()
