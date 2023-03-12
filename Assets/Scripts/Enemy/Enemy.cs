@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Enemy : EnemyManager
 {
@@ -98,14 +97,14 @@ public class Enemy : EnemyManager
         Vector2 direction = ((Vector2)transform.position - targetPosition).normalized;        
         RaycastHit2D hit = Physics2D.CircleCast(targetPosition, _spriteRenderer.bounds.size.x / 2, direction);
 
-        return !(hit.collider == null || hit.collider.tag == "Enemy");
+        return !(hit.collider == null || hit.collider.CompareTag("Enemy"));
     }
 
     int GetRandWaypointIndex()
     {
         List<int> indexes = Enumerable.Range(0, waypoints.Count).ToList();
         indexes = indexes.OrderBy(_ => Guid.NewGuid()).ToList();
-
+        
         foreach (int index in indexes)
         {
             if (index != _currentWaypointIndex && !ObjectDetected(waypoints[index].position))
