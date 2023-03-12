@@ -49,11 +49,11 @@ MonoBehaviour:
   detectionLayer:
     serializedVersion: 2
     m_Bits: 8
-  closeViewRange: 3
-  farViewRange: 6
-  farViewAngle: 113
+  closeViewRange: 15
+  farViewRange: 15
+  farViewAngle: 145.12
   playerTag: Player
-  speed: 3
+  speed: 6
 --- !u!1 &5240959363832180153
 GameObject:
   m_ObjectHideFlags: 0

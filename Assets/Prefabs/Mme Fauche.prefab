@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 812785022112399100}
-  - component: {fileID: 7648480474367771886}
+  - component: {fileID: 6063451032057225839}
   m_Layer: 0
   m_Name: Ennemi
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 5240959363832180151}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7648480474367771886
+--- !u!114 &6063451032057225839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,11 +49,11 @@ MonoBehaviour:
   detectionLayer:
     serializedVersion: 2
     m_Bits: 8
-  closeViewRange: 3
-  farViewRange: 6
-  farViewAngle: 113
+  closeViewRange: 10
+  farViewRange: 25
+  farViewAngle: 117
   playerTag: Player
-  speed: 3
+  speed: 4
 --- !u!1 &5240959363832180153
 GameObject:
   m_ObjectHideFlags: 0
