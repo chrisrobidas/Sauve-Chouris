@@ -50,11 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f08fe7a08b0a284882bb357b2d2e8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   expandDuration: 1.5
   fadeInTime: 1
   fadeOutTime: 2
-  echoCooldownTime: 4
+  echoCooldownTime: 3.5
   echoSprite: {fileID: 21300000, guid: 89bcdabfe5e3c614f924a874e959bee1, type: 3}
 --- !u!212 &2677572333154723758
 SpriteRenderer:
