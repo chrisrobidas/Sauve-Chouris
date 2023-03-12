@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,17 +7,25 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private bool _gameIsEnded = false;
+    public bool GameIsEnded { get; set; }
+    private GameOverMenu _gameOverMenu;
+
+    private void Awake()
+    {
+        GameIsEnded = false;
+        _gameOverMenu = FindObjectOfType<GameOverMenu>();
+    }
 
     public void EndGame()
     {
-        
-        if (!_gameIsEnded)
+        if (!GameIsEnded)
         {
-            _gameIsEnded = true;
-            Restart();
+            GameIsEnded = true;
+            _gameOverMenu.ActiveLevel = SceneManager.GetActiveScene().name;
+            _gameOverMenu.ToggleGameOverMenu();
+            // Restart();
         }
     }
 
-    private void Restart() =>  SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+    // private void Restart() =>  SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 }
