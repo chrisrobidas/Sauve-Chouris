@@ -79,7 +79,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 093ac9bc5f1f4054fb5a61b613bb4980, type: 2}
+  m_Motion: {fileID: 7400000, guid: fc77fde5ce3e11c40b16e2d8aff10703, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -108,7 +108,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dc74b3f8058f6a64b8f4aca4e9a36192, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9dd0deaf17cbd18449f9b72832c3d985, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -162,7 +162,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f33672d131bdf5c4fa2115badb5181cd, type: 2}
+  m_Motion: {fileID: 7400000, guid: e2fcae3b1a9de764eb2faafefda57d51, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -274,7 +274,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mme_fauche_animation_controller
+  m_Name: chaaarrrles_animation_controller
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: facingDirection
@@ -282,7 +282,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -469,7 +469,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 925279406082e444ba8232c8f93357ae, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4c16ce272189841459b4ccdc55ccf229, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

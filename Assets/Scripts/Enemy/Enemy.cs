@@ -26,8 +26,8 @@ public class Enemy : EnemyManager
     {
         base.Start();
 
-        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        _spriteAnimator = gameObject.GetComponent<Animator>();
+        _spriteRenderer = GetComponentInParent<SpriteRenderer>();
+        _spriteAnimator = GetComponentInParent<Animator>();
         waypoints = GameObject.FindGameObjectsWithTag(waypointsTag).Select(x => x.transform).ToList();
         _target = new Vector3(0, 0, 0);
         _currentWaypointIndex = GetRandWaypointIndex();
@@ -61,7 +61,7 @@ public class Enemy : EnemyManager
 
     private void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _target, speed * Time.deltaTime);
+        transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, _target, speed * Time.deltaTime);
     }
 
     private void ChangeTarget(Vector3 newTarget)
@@ -72,7 +72,7 @@ public class Enemy : EnemyManager
 
     private void LookAtTarget()
     {
-        Vector2 lookDirection = (_target - transform.position).normalized;
+        Vector2 lookDirection = (_target - transform.parent.transform.position).normalized;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
@@ -80,11 +80,11 @@ public class Enemy : EnemyManager
 
     public override bool CheckPlayerInArea() 
     {
-        if (Physics2D.OverlapCircle(transform.position, closeViewRange, detectionLayer.value)) return true;
+        if (Physics2D.OverlapCircle(transform.parent.transform.position, closeViewRange, detectionLayer.value)) return true;
 
-        if (Physics2D.OverlapCircle(transform.position, farViewRange, detectionLayer.value))
+        if (Physics2D.OverlapCircle(transform.parent.transform.position, farViewRange, detectionLayer.value))
         {
-            Vector2 directionToTarget = (_playerTarget.position - transform.position).normalized;
+            Vector2 directionToTarget = (_playerTarget.position - transform.parent.transform.position).normalized;
             return (Vector2.Angle(transform.up, directionToTarget) <= farViewAngle / 2);
         }
 
@@ -107,7 +107,7 @@ public class Enemy : EnemyManager
         
         ChangeTarget(waypoints[_currentWaypointIndex].position);
         const float TOLERANCE = 10e-6f;
-        if (Math.Abs(transform.position.x - _target.x) < TOLERANCE && Math.Abs(transform.position.y - _target.y) < TOLERANCE)
+        if (Math.Abs(transform.parent.transform.position.x - _target.x) < TOLERANCE && Math.Abs(transform.parent.transform.position.y - _target.y) < TOLERANCE)
         {
             _currentWaypointIndex = GetRandWaypointIndex();
         }
@@ -115,7 +115,7 @@ public class Enemy : EnemyManager
 
     bool ObjectDetected(Vector2 targetPosition) 
     {
-        Vector2 direction = ((Vector2)transform.position - targetPosition).normalized;        
+        Vector2 direction = ((Vector2)transform.parent.transform.position - targetPosition).normalized;        
         RaycastHit2D hit = Physics2D.CircleCast(targetPosition, _spriteRenderer.bounds.size.x / 2, direction);
 
         return !(hit.collider == null || hit.collider.CompareTag("Enemy"));
@@ -140,17 +140,17 @@ public class Enemy : EnemyManager
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, closeViewRange);
+        Gizmos.DrawWireSphere(transform.parent.transform.position, closeViewRange);
         
         Gizmos.color = Color.white;
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, farViewRange);
+        UnityEditor.Handles.DrawWireDisc(transform.parent.transform.position, Vector3.forward, farViewRange);
 
         Vector3 angl1 = DirFromAngl(-transform.eulerAngles.z, -farViewAngle * farViewRange);
         Vector3 angl2 = DirFromAngl(-transform.eulerAngles.z, farViewAngle * farViewRange);
 
         Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(transform.position, transform.position + angl1 * farViewRange);
-        Gizmos.DrawLine(transform.position, transform.position + angl2 * farViewRange);
+        Gizmos.DrawLine(transform.parent.transform.position, transform.parent.transform.position + angl1 * farViewRange);
+        Gizmos.DrawLine(transform.parent.transform.position, transform.parent.transform.position + angl2 * farViewRange);
     }
 
     private Vector2 DirFromAngl(float eulerYm, float angleDegrees)
