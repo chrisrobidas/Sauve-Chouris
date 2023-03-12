@@ -16,11 +16,11 @@ public class Echolocation : MonoBehaviour
     [SerializeField]
     private float fadeOutTime = 2f;
     [SerializeField]
-    private float echoCooldownTime = 6f;
-    [SerializeField]
     private Sprite echoSprite;
 
-    private float _echoRemainingCooldownTime = 0f;
+    public float EchoCooldownTime = 6f;
+    public float EchoRemainingCooldownTime = 0f;
+
     private GameObject _echo;
     private Echo _echoComponent;
 
@@ -33,17 +33,17 @@ public class Echolocation : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !_echoComponent.IsActive() && _echoRemainingCooldownTime <= 0f)
+        if (Input.GetKeyDown(KeyCode.Space) && !_echoComponent.IsActive() && EchoRemainingCooldownTime <= 0f)
         {
-            _echoRemainingCooldownTime = echoCooldownTime;
+            EchoRemainingCooldownTime = EchoCooldownTime;
             _echo.transform.position = transform.position;
             _echoComponent.SetValues(speed, expandDuration, fadeInTime, fadeOutTime, echoSprite);
             _echoComponent.Activate();
         }
 
-        if (_echoRemainingCooldownTime > 0f)
+        if (EchoRemainingCooldownTime > 0f)
         {
-            _echoRemainingCooldownTime -= Time.deltaTime;
+            EchoRemainingCooldownTime -= Time.deltaTime;
         } 
     }
 }
