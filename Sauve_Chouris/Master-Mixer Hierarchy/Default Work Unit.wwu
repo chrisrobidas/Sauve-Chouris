@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0C1A4AAD-7720-4602-8A5B-A9A98E317BED}" SchemaVersion="110">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{0C1A4AAD-7720-4602-8A5B-A9A98E317BED}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{FBCB2ED9-9944-4C17-8676-FA79104D28F1}" WorkUnitID="{10C9B12D-7392-44FC-8415-B8F97360CE17}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Sounds" ID="{BBBAF72A-EB17-4176-9C98-891A91973853}">
+							<ChildrenList>
+								<Bus Name="Environment" ID="{880E399A-8CE7-43D4-AFCB-EE48608AD4E5}"/>
+								<Bus Name="Bat" ID="{F8309DEE-E735-4EF9-BFA9-52A036751CFC}">
+									<DuckingList>
+										<DuckItem>
+											<BusRef Name="Music" ID="{8A6EE424-3C15-41E5-B161-5211CB85359F}"/>
+											<DuckingParam>
+												<Volume>-9</Volume>
+												<FadeInTime>1</FadeInTime>
+												<FadeOutTime>1</FadeOutTime>
+												<FadeCurve>FadeLinear</FadeCurve>
+											</DuckingParam>
+										</DuckItem>
+										<DuckItem>
+											<BusRef Name="Environment" ID="{880E399A-8CE7-43D4-AFCB-EE48608AD4E5}"/>
+											<DuckingParam>
+												<Volume>-9</Volume>
+												<FadeInTime>1</FadeInTime>
+												<FadeOutTime>1</FadeOutTime>
+												<FadeCurve>FadeLinear</FadeCurve>
+											</DuckingParam>
+										</DuckItem>
+									</DuckingList>
+								</Bus>
+							</ChildrenList>
+						</Bus>
+						<Bus Name="Music" ID="{8A6EE424-3C15-41E5-B161-5211CB85359F}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Environment" ID="{880E399A-8CE7-43D4-AFCB-EE48608AD4E5}"/>
+									<DuckingParam>
+										<Volume>-4</Volume>
+										<FadeInTime>2</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+					</ChildrenList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

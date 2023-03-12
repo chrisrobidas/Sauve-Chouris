@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{7734D972-BDB4-4F98-9D6B-048A24DE9F86}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Game_Loaded" ID="{A5E230D7-9F0E-4487-8F4D-BEF22856BE54}">
+					<ChildrenList>
+						<Action Name="" ID="{D5B9BAEC-4D9E-4084-9B1D-C44FD41BAFF2}" ShortID="847086069">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambiance" ID="{3D150BD2-B08E-4741-BEF0-B9004BFB1273}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Game_Start" ID="{7364D20F-5735-4DC6-AB17-B01D2FD33EC1}">
+					<ChildrenList>
+						<Action Name="" ID="{C6D81CCC-69ED-4B7A-B1E8-E43B9A3ACE84}" ShortID="1046194403">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu_Start" ID="{0AD4D5A0-225E-400D-9815-D5AE2373F886}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{3B005610-D346-40EF-9E18-AB0DAB82D471}" ShortID="139506303">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wing_Flap" ID="{260E75AA-6349-4207-A74D-85371269F5EB}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{29BE2505-7BBE-4B36-B2C6-66908AD029F0}" ShortID="1055259638">
+							<PropertyList>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wing_Flap" ID="{260E75AA-6349-4207-A74D-85371269F5EB}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{7406A6E9-290F-4F40-9DBD-D2DA976BA177}" ShortID="448573921">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level" ID="{C401B201-38E3-49DE-9F85-97815597B3A1}" WorkUnitID="{764A9541-E22F-442D-A87C-6314C4AF1A08}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Death" ID="{D8F5DADF-CD26-4988-9798-E5DC6D4BC556}">
+					<ChildrenList>
+						<Action Name="" ID="{BCC5325E-EDE1-4314-B9F7-AFD794161EC7}" ShortID="689548264">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Death" ID="{F322EEF5-FD6C-4700-8E29-386A0B4D79E2}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2CDA5ACF-19FF-4462-B01B-DCAA68885E9D}" ShortID="661110290">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level" ID="{C401B201-38E3-49DE-9F85-97815597B3A1}" WorkUnitID="{764A9541-E22F-442D-A87C-6314C4AF1A08}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9D5FB700-D285-422D-AB6A-A78ADBF5A840}" ShortID="930506976">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wing_Flap" ID="{260E75AA-6349-4207-A74D-85371269F5EB}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Echo_Human" ID="{A5163959-9D4C-4F37-A089-134B474A631F}">
+					<ChildrenList>
+						<Action Name="" ID="{E1CE4841-AE5A-4313-A4A9-6B978975004A}" ShortID="865721878">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Human" ID="{FF22A2E9-85DE-4226-B049-5F531635B57A}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Echo_Shoot" ID="{1282F97E-A8EC-4C27-B0CD-55FB7A910AC0}">
+					<ChildrenList>
+						<Action Name="" ID="{D12A97D7-BCEE-42EE-A7AB-B5624FC26F68}" ShortID="696758545">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Echolocation" ID="{C4274435-C7B2-493E-8180-C8CF5AF8B888}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Sauve_Chouris" ID="{D06F0ED7-8E0B-4119-A1C7-DFEC844AF08C}">
+					<ChildrenList>
+						<Action Name="" ID="{6E4C45C7-A430-4460-8696-9CF244C3E1B2}" ShortID="263340899">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sauve_Chouris" ID="{5C804BE6-550A-4081-84F8-BF40D11254E8}" WorkUnitID="{60B4A4C0-5365-4AE9-B878-E6FD810ABEC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0319C146-F823-4820-937A-468032FA1239}" ShortID="526527742">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level" ID="{C401B201-38E3-49DE-9F85-97815597B3A1}" WorkUnitID="{764A9541-E22F-442D-A87C-6314C4AF1A08}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
