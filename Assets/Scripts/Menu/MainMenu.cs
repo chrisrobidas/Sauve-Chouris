@@ -32,20 +32,36 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private Button level3Button;
 
-    private int selectedLevel;
+    [SerializeField]
+    private GameObject level2Lock;
 
-    private Coroutine _cutsceneCoroutine;
+    [SerializeField]
+    private GameObject level3Lock;
+
+    private int selectedLevel;
+    private int _isLevel2Unlocked;
+    private int _isLevel3Unlocked;
+
+    private bool _canSkipCutscene;
+    private Coroutine _loadLevelCoroutine;
 
     private void Start()
     {
         loadingCanvas.SetActive(false);
+
+        _isLevel2Unlocked = PlayerPrefs.GetInt("IsLevel2Unlocked", 0);
+        _isLevel3Unlocked = PlayerPrefs.GetInt("IsLevel3Unlocked", 0);
+        level2Button.enabled = _isLevel2Unlocked == 0 ? false : true;
+        level3Button.enabled = _isLevel3Unlocked == 0 ? false : true;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && _canSkipCutscene)
         {
-            SkipCutscene();
+            introCutsceneScript.ResetUI();
+            StopCoroutine(_loadLevelCoroutine);
+            SceneManager.LoadScene("Level_1");
         }
     }
 
@@ -54,20 +70,6 @@ public class MainMenu : MonoBehaviour
         mainCanvas.SetActive(false);
         buttonsCanvas.SetActive(false);
         rainCanvas.SetActive(false);
-        _cutsceneCoroutine = StartCoroutine(StartCutscene());
-    }
-
-    private IEnumerator StartCutscene()
-    {
-        yield return introCutsceneScript.ShowCutscene();
-        ShowLevelSelectionCanvas();
-    }
-
-    private void SkipCutscene()
-    {
-        StopCoroutine(_cutsceneCoroutine);
-        _cutsceneCoroutine = null;
-        introCutsceneScript.ResetUI();
         ShowLevelSelectionCanvas();
     }
 
@@ -76,6 +78,9 @@ public class MainMenu : MonoBehaviour
         levelSelectionCanvas.SetActive(true);
         level1Button.interactable = false;
         selectedLevel = 1;
+
+        level2Lock.SetActive(_isLevel2Unlocked == 0 ? true : false);
+        level3Lock.SetActive(_isLevel3Unlocked == 0 ? true : false);
     }
 
     public void Exit()
@@ -117,13 +122,23 @@ public class MainMenu : MonoBehaviour
 
     public void StartLevel()
     {
-        StartCoroutine(LoadLevel());
+        _loadLevelCoroutine = StartCoroutine(LoadLevel());
     }
 
     private IEnumerator LoadLevel()
     {
         loadingCanvas.SetActive(true);
+        PlayerPrefs.SetInt("IsLevel" + (selectedLevel + 1) + "Unlocked", 1);
+        PlayerPrefs.Save();
         yield return new WaitForSeconds(2);
+
+        if (selectedLevel == 1)
+        {
+            _canSkipCutscene = true;
+            levelSelectionCanvas.SetActive(false);
+            yield return introCutsceneScript.ShowCutscene();
+        }
+        
         SceneManager.LoadScene("Level_" + selectedLevel);
     }
 }
