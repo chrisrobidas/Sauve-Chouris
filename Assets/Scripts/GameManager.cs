@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private bool _gameIsEnded = true;
+    private bool _gameIsEnded = false;
 
     public void EndGame()
     {
+        
         if (!_gameIsEnded)
         {
             _gameIsEnded = true;
@@ -17,8 +18,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Restart()
-    {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-    }
+    private void Restart() =>  SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 }
