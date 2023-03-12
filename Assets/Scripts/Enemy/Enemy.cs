@@ -137,7 +137,7 @@ public class Enemy : EnemyManager
         return _currentWaypointIndex;
     }
     
-    void OnDrawGizmos()
+    /*void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.parent.transform.position, closeViewRange);
@@ -151,7 +151,7 @@ public class Enemy : EnemyManager
         Gizmos.color = Color.magenta;
         Gizmos.DrawLine(transform.parent.transform.position, transform.parent.transform.position + angl1 * farViewRange);
         Gizmos.DrawLine(transform.parent.transform.position, transform.parent.transform.position + angl2 * farViewRange);
-    }
+    }*/
 
     private Vector2 DirFromAngl(float eulerYm, float angleDegrees)
     {

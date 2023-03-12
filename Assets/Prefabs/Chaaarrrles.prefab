@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 1747194927}
   - component: {fileID: 1747194928}
   - component: {fileID: 1064460935135743832}
+  - component: {fileID: -3370363025774787656}
   m_Layer: 0
   m_Name: Chaaarrrles
   m_TagString: Enemy
@@ -210,3 +211,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3370363025774787656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5240959363832180153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bae0ecc7b67864fa7d8b5c95ac4aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeInTime: 1
+  FadeOutTime: 1.5

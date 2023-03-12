@@ -61,6 +61,7 @@ public class MainMenu : MonoBehaviour
         {
             introCutsceneScript.ResetUI();
             StopCoroutine(_loadLevelCoroutine);
+            AkSoundEngine.StopAll();
             SceneManager.LoadScene("Level_1");
         }
     }
@@ -128,8 +129,6 @@ public class MainMenu : MonoBehaviour
     private IEnumerator LoadLevel()
     {
         loadingCanvas.SetActive(true);
-        PlayerPrefs.SetInt("IsLevel" + (selectedLevel + 1) + "Unlocked", 1);
-        PlayerPrefs.Save();
         yield return new WaitForSeconds(2);
 
         if (selectedLevel == 1)
@@ -138,7 +137,8 @@ public class MainMenu : MonoBehaviour
             levelSelectionCanvas.SetActive(false);
             yield return introCutsceneScript.ShowCutscene();
         }
-        
+
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene("Level_" + selectedLevel);
     }
 }

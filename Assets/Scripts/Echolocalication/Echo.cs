@@ -105,7 +105,7 @@ public class Echo : MonoBehaviour
                     revealableScript.Reveal();
 
                     //Play spooky sound for grandma and chaaaarrrles
-                    if (hit.collider.gameObject.name == "Enemy")
+                    if (hit.collider.gameObject.CompareTag("Enemy"))
                     {
                         _soundManagerScript.PlaySound("Echo_Human");
                     }

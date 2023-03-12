@@ -9,10 +9,14 @@ using UnityEngine.UI;
 public class LevelEnding : CutScene
 {
     [SerializeField] private Image[] endingImages;
+    [SerializeField] private int nextLevel;
+
+    private SoundManager _soundManagerScript;
 
     void Start()
     {
         ResetUI();
+        _soundManagerScript = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     public void ResetUI()
@@ -29,18 +33,15 @@ public class LevelEnding : CutScene
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Trap triggered");
-        
+        PlayerPrefs.SetInt("IsLevel" + nextLevel + "Unlocked", 1);
+        PlayerPrefs.Save();
+        _soundManagerScript.PlaySound("Sauve_Chouris");
         StartCoroutine(LevelTransition());
-        // endingImages[0].enabled = true;
-        // yield return new WaitForSeconds(10);
-
     }
-    
+
 
     private IEnumerator LevelTransition()
     {
-        
         yield return ShowSlide(endingImages[0], 1);
         yield return ShowSlide(endingImages[1], 0);
         yield return ShowSlide(endingImages[2], 0);
@@ -54,10 +55,9 @@ public class LevelEnding : CutScene
         yield return ShowSlide(endingImages[0], 0);
         yield return ShowSlide(endingImages[1], 0);
         yield return ShowSlide(endingImages[2], 2);
-        
-        
-        Debug.Log("loaddd");
-        SceneManager.LoadScene("MainMenu");
+
+        AkSoundEngine.StopAll();
+        SceneManager.LoadScene("Level_" + nextLevel);
     }
 
     private IEnumerator ShowSlide(Image img, int fade)
