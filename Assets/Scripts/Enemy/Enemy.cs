@@ -20,12 +20,14 @@ public class Enemy : EnemyManager
     private Vector3 _target;
     private int _currentWaypointIndex = 0;
     private Transform _playerTarget;
+    private Animator _spriteAnimator;
     
     public new void Start()
     {
         base.Start();
 
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        _spriteAnimator = gameObject.GetComponent<Animator>();
         waypoints = GameObject.FindGameObjectsWithTag(waypointsTag).Select(x => x.transform).ToList();
         _target = new Vector3(0, 0, 0);
         _currentWaypointIndex = GetRandWaypointIndex();
@@ -35,6 +37,25 @@ public class Enemy : EnemyManager
     void Update()
     {
         State.RunCurrentState();
+        Vector2 direction = transform.position - _target;
+        direction.Normalize();
+        float angle = Vector2.SignedAngle(direction, Vector2.right);
+        if (angle < -135f || angle > 135)
+        {
+            _spriteAnimator.SetInteger("facingDirection", 0);
+        }
+        if (angle > -135f && angle < -45f)
+        {
+            _spriteAnimator.SetInteger("facingDirection", 1);
+        }
+        if (angle > -45f && angle < 45)
+        {
+            _spriteAnimator.SetInteger("facingDirection", 2);
+        }
+        if (angle > 45f && angle < 135f)
+        {
+            _spriteAnimator.SetInteger("facingDirection", 3);
+        }
         Debug.DrawRay(transform.position, _target - transform.position, Color.yellow);
     }
 

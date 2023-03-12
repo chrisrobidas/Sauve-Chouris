@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 698979310}
   - component: {fileID: 698979314}
   m_Layer: 3
-  m_Name: AlbinosBat
+  m_Name: Blanche
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
