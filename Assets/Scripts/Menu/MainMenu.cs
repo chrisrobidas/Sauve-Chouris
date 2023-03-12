@@ -109,6 +109,12 @@ public class MainMenu : MonoBehaviour
 
     public void StartLevel()
     {
+        StartCoroutine(LoadLevel());
+    }
+
+    private IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Level_" + selectedLevel);
     }
 }

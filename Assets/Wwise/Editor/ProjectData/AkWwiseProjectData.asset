@@ -140,7 +140,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: ece190cf58d7ef4493488d45fff727b3
     GuidInternal: 
-    m_lastTime: -8585230378664775808
+    m_lastTime: -8585230289754775808
     List:
     - name: Main
       guid: f66bece70a0b1b48a1d67865fc118ca1
@@ -168,7 +168,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 72d93477b4bd984f9d6b048a24de9f86
     GuidInternal: 
-    m_lastTime: -8585230318264775808
+    m_lastTime: -8585230292214775808
     List:
     - name: Death
       guid: dfdaf5d826cd88499798e5dc6d4bc556
@@ -303,6 +303,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: d70e6fd00b8e1941a1c7dfec844af08c
       Path: Events\Default Work Unit\Sauve_Chouris
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ThunderClap
+      guid: 9fde4c285fcadc46a6c6b7bc0c50081d
+      id: 3839018795
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 72d93477b4bd984f9d6b048a24de9f86
+      - ElementName: ThunderClap
+        ObjectType: 3
+        guid: 9fde4c285fcadc46a6c6b7bc0c50081d
+      Path: Events\Default Work Unit\ThunderClap
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
