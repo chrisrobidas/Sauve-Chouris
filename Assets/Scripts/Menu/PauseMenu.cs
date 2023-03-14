@@ -34,6 +34,7 @@ public class PauseMenu : MonoBehaviour
     public void ReturnToMenu()
     {
         Time.timeScale = 1f;
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene("MainMenu");
     }
 

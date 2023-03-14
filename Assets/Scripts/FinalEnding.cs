@@ -49,7 +49,8 @@ public class FinalEnding : CutScene
         intro4Text.enabled = true;
         yield return new WaitForSeconds(4);
         intro4Text.enabled = false;
+
         AkSoundEngine.StopAll();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 }

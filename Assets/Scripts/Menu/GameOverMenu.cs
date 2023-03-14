@@ -16,7 +16,8 @@ public class GameOverMenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        AkSoundEngine.StopAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }  
 
     public void ToggleGameOverMenu()
@@ -37,6 +38,7 @@ public class GameOverMenu : MonoBehaviour
     public void ReturnToMenu()
     {
         Time.timeScale = 1f;
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene("MainMenu");
     }
 
