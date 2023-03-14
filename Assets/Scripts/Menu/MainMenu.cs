@@ -61,6 +61,7 @@ public class MainMenu : MonoBehaviour
         {
             introCutsceneScript.ResetUI();
             StopCoroutine(_loadLevelCoroutine);
+            AkSoundEngine.StopAll();
             SceneManager.LoadScene("Level_1");
         }
     }

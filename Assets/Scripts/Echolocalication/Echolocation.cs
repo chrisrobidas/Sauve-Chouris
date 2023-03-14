@@ -4,12 +4,16 @@ public class Echolocation : MonoBehaviour
 {
     [SerializeField]
     private float speed = 2f;
+
     [SerializeField]
     private float expandDuration = 2f;
+
     [SerializeField]
     private float fadeInTime = 1f;
+
     [SerializeField]
     private float fadeOutTime = 2f;
+
     [SerializeField]
     private Sprite echoSprite;
 
