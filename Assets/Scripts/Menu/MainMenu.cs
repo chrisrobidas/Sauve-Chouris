@@ -61,7 +61,6 @@ public class MainMenu : MonoBehaviour
         {
             introCutsceneScript.ResetUI();
             StopCoroutine(_loadLevelCoroutine);
-            AkSoundEngine.StopAll();
             SceneManager.LoadScene("Level_1");
         }
     }
@@ -139,6 +138,6 @@ public class MainMenu : MonoBehaviour
         }
 
         AkSoundEngine.StopAll();
-        SceneManager.LoadScene("Level_" + selectedLevel);
+        SceneManager.LoadSceneAsync("Level_" + selectedLevel);
     }
 }

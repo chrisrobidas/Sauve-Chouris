@@ -26,9 +26,6 @@ public class LevelEnding : CutScene
             img.color = new Color(1, 1, 1, 0);
             img.enabled = false;
         }
-        // endingImage.color = new Color(1, 1, 1, 0);
-        // endingImage.enabled = false;
-        // endingText.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -54,10 +51,11 @@ public class LevelEnding : CutScene
         
         yield return ShowSlide(endingImages[0], 0);
         yield return ShowSlide(endingImages[1], 0);
+        
         yield return ShowSlide(endingImages[2], 2);
 
         AkSoundEngine.StopAll();
-        SceneManager.LoadScene("Level_" + nextLevel);
+        SceneManager.LoadSceneAsync("Level_" + nextLevel);
     }
 
     private IEnumerator ShowSlide(Image img, int fade)
