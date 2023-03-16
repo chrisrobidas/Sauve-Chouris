@@ -20,7 +20,7 @@ public class Rain : MonoBehaviour
     {
         _elaspsedTime += Time.deltaTime;
 
-        if (_elaspsedTime > 0.5f)
+        if (_elaspsedTime > 0.25f)
         {
             rain1Image.SetActive(!rain1Image.activeSelf);
             rain2Image.SetActive(!rain2Image.activeSelf);

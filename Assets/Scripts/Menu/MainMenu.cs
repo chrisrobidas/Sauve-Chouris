@@ -21,6 +21,9 @@ public class MainMenu : MonoBehaviour
     private GameObject rainCanvas;
 
     [SerializeField]
+    private GameObject creditsCanvas;
+
+    [SerializeField]
     private IntroCutscene introCutsceneScript;
 
     [SerializeField]
@@ -71,17 +74,17 @@ public class MainMenu : MonoBehaviour
         mainCanvas.SetActive(false);
         buttonsCanvas.SetActive(false);
         rainCanvas.SetActive(false);
+        creditsCanvas.SetActive(false);
         ShowLevelSelectionCanvas();
     }
 
-    private void ShowLevelSelectionCanvas()
+    public void Credits()
     {
-        levelSelectionCanvas.SetActive(true);
-        level1Button.interactable = false;
-        selectedLevel = 1;
-
-        level2Lock.SetActive(_isLevel2Unlocked == 0 ? true : false);
-        level3Lock.SetActive(_isLevel3Unlocked == 0 ? true : false);
+        creditsCanvas.SetActive(true);
+        mainCanvas.SetActive(false);
+        buttonsCanvas.SetActive(false);
+        rainCanvas.SetActive(false);
+        levelSelectionCanvas.SetActive(false);
     }
 
     public void Exit()
@@ -92,9 +95,20 @@ public class MainMenu : MonoBehaviour
     public void Back()
     {
         levelSelectionCanvas.SetActive(false);
+        creditsCanvas.SetActive(false);
         mainCanvas.SetActive(true);
         buttonsCanvas.SetActive(true);
         rainCanvas.SetActive(true);
+    }
+
+    private void ShowLevelSelectionCanvas()
+    {
+        levelSelectionCanvas.SetActive(true);
+        level1Button.interactable = false;
+        selectedLevel = 1;
+
+        level2Lock.SetActive(_isLevel2Unlocked == 0 ? true : false);
+        level3Lock.SetActive(_isLevel3Unlocked == 0 ? true : false);
     }
 
     public void ChangeLevel(int levelNumber)
