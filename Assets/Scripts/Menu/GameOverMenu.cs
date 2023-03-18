@@ -8,8 +8,11 @@ public class GameOverMenu : MonoBehaviour
 
     public string ActiveLevel { get; set; }
 
+    private SoundManager _soundManagerScript;
+
     private void Start()
     {
+        _soundManagerScript = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         _isActive = false;
     }
 
@@ -27,10 +30,12 @@ public class GameOverMenu : MonoBehaviour
         
         if (_isActive)
         {
+            _soundManagerScript.StopMusicEvent();
             Time.timeScale = 0f;
         }
         else
         {
+            _soundManagerScript.StartMusicEvent();
             Time.timeScale = 1f;
         }
     }
