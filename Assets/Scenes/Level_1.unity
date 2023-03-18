@@ -897,8 +897,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 286304377}
-  - component: {fileID: 286304376}
-  - component: {fileID: 286304375}
   - component: {fileID: 286304374}
   m_Layer: 0
   m_Name: SoundManager
@@ -919,62 +917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b8fec6c0856f64a878c62a683f5702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &286304375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286304373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760825a4c4e608b409ec190689ae97bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9889824ad2330484581613ec2df8007b, type: 2}
-  useCallbacks: 0
-  Callbacks: []
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
-  MultiPositionType: 1
-  multiPositionTypeLabel: 0
-  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
-  LargeModePositions: []
-  multiPositionArray: []
---- !u!114 &286304376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286304373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19cde6faf33a64146b46e5523a117268, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 0
-  isStaticObject: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
+  isRainPlayingAtBegining: 1
+  isMusicPlayingAtBegining: 1
 --- !u!4 &286304377
 Transform:
   m_ObjectHideFlags: 0
@@ -2534,6 +2478,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 269999554549518221, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 286304374}
+    - target: {fileID: 269999554549518221, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
     - target: {fileID: 269999554745285802, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2625,6 +2577,22 @@ PrefabInstance:
     - target: {fileID: 269999555790066911, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 269999555831893058, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 286304374}
+    - target: {fileID: 269999555831893058, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 269999555887627320, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 286304374}
+    - target: {fileID: 269999555887627320, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25ca8bd9151be7c48a8af1b33a2da3a7, type: 3}
@@ -3013,6 +2981,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7943413360852571442, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 286304374}
+    - target: {fileID: 7943413360852571442, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943413360913802568, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 286304374}
+    - target: {fileID: 7943413360913802568, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
     - target: {fileID: 7943413360956358097, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3100,6 +3084,14 @@ PrefabInstance:
     - target: {fileID: 7943413360956358101, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}
       propertyPath: m_Name
       value: GameOverCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943413362198865543, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 286304374}
+    - target: {fileID: 7943413362198865543, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySound
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e76d8613964071e4bbfea11d4cba5542, type: 3}

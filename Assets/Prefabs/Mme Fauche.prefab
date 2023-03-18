@@ -53,7 +53,7 @@ MonoBehaviour:
   farViewRange: 30
   farViewAngle: 118.11
   playerTag: Player
-  speed: 4
+  speed: 5
 --- !u!1 &5240959363832180153
 GameObject:
   m_ObjectHideFlags: 0

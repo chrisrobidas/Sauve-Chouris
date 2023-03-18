@@ -8,6 +8,13 @@ public class PauseMenu : MonoBehaviour
 
     public bool _isPaused;
 
+    private SoundManager _soundManagerScript;
+
+    private void Start()
+    {
+        _soundManagerScript = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -23,10 +30,12 @@ public class PauseMenu : MonoBehaviour
 
         if (_isPaused)
         {
+            _soundManagerScript.StopMusicEvent();
             Time.timeScale = 0f;
         }
         else
         {
+            _soundManagerScript.StartMusicEvent();
             Time.timeScale = 1f;
         }
     }

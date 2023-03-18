@@ -27,6 +27,9 @@ public class MainMenu : MonoBehaviour
     private IntroCutscene introCutsceneScript;
 
     [SerializeField]
+    private Button startButton;
+
+    [SerializeField]
     private Button level1Button;
 
     [SerializeField]
@@ -51,6 +54,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         loadingCanvas.SetActive(false);
+        startButton.interactable = false;
 
         _isLevel2Unlocked = PlayerPrefs.GetInt("IsLevel2Unlocked", 0);
         _isLevel3Unlocked = PlayerPrefs.GetInt("IsLevel3Unlocked", 0);
@@ -104,8 +108,7 @@ public class MainMenu : MonoBehaviour
     private void ShowLevelSelectionCanvas()
     {
         levelSelectionCanvas.SetActive(true);
-        level1Button.interactable = false;
-        selectedLevel = 1;
+        startButton.interactable = false;
 
         level2Lock.SetActive(_isLevel2Unlocked == 0 ? true : false);
         level3Lock.SetActive(_isLevel3Unlocked == 0 ? true : false);
@@ -113,6 +116,7 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeLevel(int levelNumber)
     {
+        startButton.interactable = true;
         selectedLevel = levelNumber;
 
         switch (levelNumber)

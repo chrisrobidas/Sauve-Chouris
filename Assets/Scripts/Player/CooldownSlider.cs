@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class CooldownSlider : MonoBehaviour
 {
@@ -28,12 +27,12 @@ public class CooldownSlider : MonoBehaviour
     {
         _slider.value = (playerEchoLocation.EchoCooldownTime - playerEchoLocation.EchoRemainingCooldownTime) / playerEchoLocation.EchoCooldownTime;
 
-        if (_slider.value >= 0.99 && sliderFill.color.a >= 0.99 && _fadeOutCoroutine == null)
+        if (_slider.value >= 0.99 && _fadeOutCoroutine == null)
         {
             _fadeOutCoroutine = StartCoroutine(ImageFadeTo(0, 1));
         }
 
-        if (_slider.value <= 0.01 && sliderFill.color.a <= 0.01)
+        if (_slider.value <= 0.01)
         {
             StartCoroutine(ImageFadeTo(1, 1));
             _fadeOutCoroutine = null;
@@ -44,7 +43,6 @@ public class CooldownSlider : MonoBehaviour
     {
         if (_fadeOutCoroutine != null)
         {
-            Debug.Log("Stopping coroutine");
             StopCoroutine(_fadeOutCoroutine);
             _fadeOutCoroutine = null;
         }
