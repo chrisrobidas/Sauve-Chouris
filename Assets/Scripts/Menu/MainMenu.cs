@@ -103,6 +103,11 @@ public class MainMenu : MonoBehaviour
         mainCanvas.SetActive(true);
         buttonsCanvas.SetActive(true);
         rainCanvas.SetActive(true);
+        startButton.interactable = false;
+        level1Button.interactable = true;
+        level2Button.interactable = true;
+        level3Button.interactable = true;
+        selectedLevel = 0;
     }
 
     private void ShowLevelSelectionCanvas()
