@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2957293621217032691}
   - component: {fileID: 7931713127054791848}
   m_Layer: 5
-  m_Name: ContinueText
+  m_Name: RestartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 40}
+  m_SizeDelta: {x: 400, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2957293621217032691
 CanvasRenderer:
@@ -142,8 +142,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1939842450, guid: 8df8313e4f50ea446b62d5507039dfee, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -1940343048, guid: 9da743ade2474344398c131158dbf0ff, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
