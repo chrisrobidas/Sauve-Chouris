@@ -11,7 +11,7 @@
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathMac />
   <WwiseInstallationPathWindows>D:\Programs</WwiseInstallationPathWindows>
-  <WwiseProjectPath>C:/Users/Chris/Downloads/Sauve_Chouris/Sauve_Chouris.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../../Sauve_Chouris_wwise_project/Sauve_Chouris.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>
